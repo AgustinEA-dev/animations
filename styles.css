@@ -1,0 +1,256 @@
+:root {
+    --background-color: #adff2f;
+    --background-color1: #008080;
+    --background-color2: #a52779;
+    --background-color3: #7fffd4;
+    --background-color4: #1d1d1d;
+    --background-color5: #04b0a2;
+
+    --font-size: 18px;
+    --font-size1: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color4);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    overflow-x: hidden;
+}
+
+h2 {
+    margin: 60px 20px;
+    font-size: 60px;
+    font-family: fantasy;
+    letter-spacing: 20px;
+    color: var(--background-color1);
+}
+
+.squares-container {
+    height: 500px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    background-color: var(--background-color);
+    animation-name: move, fade, bounce, changeColor;
+    animation-duration: 3s, 1s, 2s, 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: relative;
+}
+
+.square:nth-child(2) {
+    animation-name: move, fade, bounce, changeColor;
+    animation-duration: 5s, 0.5s, 1s, 0.5s;
+    position: relative;
+}
+
+.square:nth-child(3) {
+    animation-name: move, fade, bounce, changeColor;
+    animation-duration: 6s, 0.7s, 0.5s, 2s;
+    position: relative;
+
+}
+
+.square:nth-child(4) {
+    animation-name: move, fade, bounce, changeColor;
+    animation-duration: 4s;
+    position: relative;
+}
+
+.square.paused {
+    animation-play-state: paused;
+}
+
+.button-container,
+.reset-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.reset-button-container {
+    margin: 70px;
+}
+
+button {
+    width: 90%;
+    padding: 15px;
+    border: none;
+    background-color: var(--background-color1);
+    color: var(--background-color);
+    font-size: var(--font-size);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 10px;
+    text-align: center;
+    cursor: pointer;
+
+    :hover {
+        color: var(--background-color1);
+        color: var(--background-color);
+    }
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: var(--background-color);
+    color: var(--background-color1);
+}
+
+.board-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-board {
+    max-width: 700px;
+    margin: 0 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.board-square {
+    width: 100px;
+    height: 100px;
+    background-color: var(--background-color);
+    border: 1px solid var(--background-color4);
+    transition: all 0.5s;
+    transition-behavior: allow-discrete;
+    cursor: pointer;
+}
+
+.board-square-flip {
+    transform: rotate(45deg);
+    background-color: var(--background-color3);
+    z-index: 1;
+}
+
+.container {
+    background-color: var(--background-color4);
+    animation: changeBg;
+    animation-timeline: scroll(self);
+}
+
+.background-container {
+    width: 100%;
+    height: 200vh;
+    background-color: var(--background-color4);
+    animation: changeBg;
+    animation-timeline: scroll();
+}
+
+.frame {
+    display: flex;
+    width: 70%;
+    height: 558px;
+    margin: 100px auto;
+    border: 1px solid var(--background-color);
+    perspective: 800px;
+}
+
+.shape {
+    width: 50%;
+    height: 558px;
+    background-color: var(--background-color5);
+    view-timeline-name: --shape;
+    view-timeline-axis: block;
+    animation-timeline: --shape;
+    animation-name: changePerspective;
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+}
+
+.secondary-shape {
+    width: 100px;
+    height: 100px;
+    margin: 0 100px;
+    background-color: var(--background-color2);
+    view-timeline-name: --secondary-shape;
+    view-timeline-axis: block;
+    animation-timeline: --secondary-shape;
+    animation-name: changePerspective;
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+}
+
+.next-animation {
+    width: 100%;
+    height: 500px;
+    z-index: 2;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(100vw - 140px));
+    }
+
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: 25px
+    }
+
+    100% {
+        top: -50px;
+    }
+
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: var(--background-color);
+    }
+
+    100% {
+        background-color: var(--background-color2);
+    }
+}
+
+@keyframes changeBg {
+    to {
+        background-color: var(--background-color5);
+    }
+}
+
+@keyframes changePerspective {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateY(180deg);
+    }
+}
