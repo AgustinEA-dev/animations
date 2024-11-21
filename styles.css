@@ -6,16 +6,16 @@
     --background-color4: #1d1d1d;
     --background-color5: #04b0a2;
 
-    --font-size: 16px;
+    --font-size: 10px;
     --font-size1: 18px;
-    --font-size2: 40px;
+    --font-size2: 30px;
+    --font-size3: 40px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1 px solid red;
 }
 
 body {
@@ -29,7 +29,7 @@ h2 {
     margin: 60px 20px;
     font-size: px;
     font-family: "Roboto Condensed", serif;
-    font-size: var(--font-size2);
+    font-size: var(--font-size3);
     text-align: center;
     color: var(--background-color1);
 }
@@ -78,21 +78,20 @@ h2 {
 .reset-button-container {
     display: flex;
     justify-content: center;
-}
-
-.reset-button-container {
     margin: 70px;
 }
 
+.reset-button-container {}
+
 button {
-    width: 90%;
+    width: 100%;
     padding: 15px;
     border: none;
     background-color: var(--background-color1);
     color: var(--background-color);
     font-size: var(--font-size);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
     text-align: center;
     cursor: pointer;
 
@@ -159,9 +158,9 @@ button:hover {
     display: flex;
     width: 60%;
     height: 600px;
-    margin: 100px auto;
+    margin: 60px auto;
     border: 1px solid var(--background-color);
-    perspective: 2000px;
+    perspective: 5000px;
 }
 
 .shape {
@@ -176,23 +175,18 @@ button:hover {
     animation-fill-mode: both;
 }
 
-.secondary-shape {
-    width: 100px;
-    height: 100px;
-    margin: 0 100px;
-    background-color: var(--background-color2);
-    view-timeline-name: --secondary-shape;
-    view-timeline-axis: block;
-    animation-timeline: --secondary-shape;
-    animation-name: changePerspective;
-    animation-range: entry 25% cover 50%;
-    animation-fill-mode: both;
+.aos-divs-container {
+    width: 70%;
+    margin: 60px auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.next-animation {
-    width: 100%;
-    height: 500px;
-    z-index: 2;
+.shapes {
+    width: 400px;
+    height: 400px;
 }
 
 @keyframes move {
@@ -221,7 +215,7 @@ button:hover {
 
 }
 
-/* 
+
 @keyframes fade {
     0% {
         opacity: 0;
@@ -230,7 +224,7 @@ button:hover {
     100% {
         opacity: 1;
     }
-} */
+}
 
 @keyframes changeColor {
     0% {
@@ -259,6 +253,8 @@ button:hover {
     }
 }
 
+
+
 @media (max-width: 690px) {
     .frame {
         height: 500px;
@@ -267,7 +263,7 @@ button:hover {
 
 @media (max-width: 590px) {
     h2 {
-        font-size: var(--font-size1);
+        font-size: var(--font-size3);
     }
 
     .frame {
@@ -284,11 +280,30 @@ button:hover {
     .frame {
         height: 400px;
     }
+
+    button {
+        font-size: var(--font-size);
+    }
 }
 
 @media (max-width: 390px) {
     .board-square {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 290px) {
+    .board-square {
+        width: 50px;
+        height: 50px;
+    }
+
+    button {
+        padding: 5px;
+    }
+
+    h2 {
+        font-size: var(--font-size2);
     }
 }
