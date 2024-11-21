@@ -6,14 +6,16 @@
     --background-color4: #1d1d1d;
     --background-color5: #04b0a2;
 
-    --font-size: 18px;
-    --font-size1: 16px;
+    --font-size: 16px;
+    --font-size1: 18px;
+    --font-size2: 40px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: 1 px solid red;
 }
 
 body {
@@ -25,19 +27,20 @@ body {
 
 h2 {
     margin: 60px 20px;
-    font-size: 60px;
-    font-family: fantasy;
-    letter-spacing: 20px;
+    font-size: px;
+    font-family: "Roboto Condensed", serif;
+    font-size: var(--font-size2);
+    text-align: center;
     color: var(--background-color1);
 }
 
 .squares-container {
-    height: 500px;
+    height: 470px;
 }
 
 .square {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: 20px;
     background-color: var(--background-color);
     animation-name: move, fade, bounce, changeColor;
@@ -116,10 +119,10 @@ button:hover {
 .color-board {
     max-width: 700px;
     margin: 0 30px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
     align-content: center;
-    flex-wrap: wrap;
 }
 
 .board-square {
@@ -154,16 +157,16 @@ button:hover {
 
 .frame {
     display: flex;
-    width: 70%;
-    height: 558px;
+    width: 60%;
+    height: 600px;
     margin: 100px auto;
     border: 1px solid var(--background-color);
-    perspective: 800px;
+    perspective: 2000px;
 }
 
 .shape {
-    width: 50%;
-    height: 558px;
+    width: 100%;
+    height: 100%;
     background-color: var(--background-color5);
     view-timeline-name: --shape;
     view-timeline-axis: block;
@@ -218,6 +221,7 @@ button:hover {
 
 }
 
+/* 
 @keyframes fade {
     0% {
         opacity: 0;
@@ -226,7 +230,7 @@ button:hover {
     100% {
         opacity: 1;
     }
-}
+} */
 
 @keyframes changeColor {
     0% {
@@ -252,5 +256,39 @@ button:hover {
     to {
         opacity: 1;
         transform: rotateY(180deg);
+    }
+}
+
+@media (max-width: 690px) {
+    .frame {
+        height: 500px;
+    }
+}
+
+@media (max-width: 590px) {
+    h2 {
+        font-size: var(--font-size1);
+    }
+
+    .frame {
+        height: 400px;
+    }
+}
+
+@media (max-width: 490px) {
+    .board-square {
+        width: 80px;
+        height: 80px;
+    }
+
+    .frame {
+        height: 400px;
+    }
+}
+
+@media (max-width: 390px) {
+    .board-square {
+        width: 60px;
+        height: 60px;
     }
 }

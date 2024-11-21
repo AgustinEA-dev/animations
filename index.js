@@ -12,7 +12,7 @@ puaseButton.addEventListener("click", () => {
 const boardContainer = document.querySelector(".color-board")
 const resetBoardButton = document.querySelector(".reset-button")
 
-for (let i = 0; i < 21; i++) {
+for (let i = 0; i < 16; i++) {
     const boardSquare = document.createElement("div")
     boardSquare.classList.add("board-square")
     boardContainer.appendChild(boardSquare)
