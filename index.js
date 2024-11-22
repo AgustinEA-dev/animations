@@ -46,7 +46,3 @@ resetBoardButton.addEventListener("click", () => {
         square.style.backgroundColor = "var(--background-color)"
     })
 })
-
-// AOS scroll library
-
-const aosDivContainer = document.querySelector() 
