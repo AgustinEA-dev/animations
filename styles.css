@@ -55,6 +55,7 @@ h2 {
     margin: 20px;
     background-color: var(--background-color);
     animation-name: move, fade, bounce, changeColor;
+    animation-delay: 3s;
     animation-duration: 3s, 1s, 2s, 4s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
