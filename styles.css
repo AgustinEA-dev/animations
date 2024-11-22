@@ -29,7 +29,7 @@ body {
 
 h1 {
     text-align: center;
-    margin-top: 40px;
+    margin: 40px 20px;
     font-family: "Funnel Display", sans-serif;
     font-size: var(--font-size4);
     background-image: url(./assets/background-h1\ \(20241122072918\).jpg);
@@ -49,14 +49,11 @@ ul {
     display: flex;
     gap: 40px;
     color: var(--background-color);
-    padding: 20px;
 }
 
 li {
     list-style: none;
     cursor: pointer;
-
-
 }
 
 h2 {
@@ -115,11 +112,11 @@ h2 {
 .reset-button-container {
     display: flex;
     justify-content: center;
-    margin: 70px;
 }
 
 button {
     padding: 15px;
+    margin-top: 20px;
     border: none;
     background-color: var(--background-color1);
     color: var(--background-color);
@@ -332,7 +329,7 @@ section {
     }
 
     .aos-divs-container {
-        width: 90%;
+        width: 80%;
     }
 }
 
@@ -386,21 +383,16 @@ section {
         font-size: var(--font-size2);
     }
 
-    .square {
-        width: 40px;
-        height: 40px;
-    }
-
-    .board-square {
-        width: 40px;
-        height: 40px;
-    }
-
     button {
         padding: 5px;
     }
 
     h2 {
         font-size: var(--font-size2);
+    }
+
+    .board-square {
+        width: 50px;
+        height: 50px;
     }
 }
