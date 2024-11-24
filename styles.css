@@ -349,6 +349,10 @@ section {
 /* Media queries */
 
 @media (max-width: 690px) {
+    nav {
+        position: unset;
+    }
+
     .frame {
         height: 500px;
     }
