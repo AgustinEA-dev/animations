@@ -45,6 +45,9 @@ h1 {
 }
 
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     background-color: black;
@@ -76,8 +79,8 @@ a:hover {
 }
 
 h2 {
-    margin: 60px 20px;
-    font-size: px;
+    padding: 70px;
+    font-size: var(--font-size3);
     font-family: "Roboto Condensed", serif;
     font-size: var(--font-size3);
     text-align: center;
@@ -135,7 +138,6 @@ h2 {
 
 button {
     padding: 15px;
-    margin-top: 40px;
     border: none;
     background-color: var(--background-color1);
     color: var(--background-color);
@@ -189,6 +191,10 @@ button:hover {
     z-index: 1;
 }
 
+.reset-button {
+    margin-top: 60px;
+}
+
 /* USING PERSPECTIVE AND SCROLL() */
 
 .container {
@@ -208,8 +214,8 @@ button:hover {
 .frame {
     display: flex;
     width: 60%;
-    height: 600px;
-    margin: 60px auto;
+    height: 400px;
+    margin: 0 auto;
     border: 1px solid var(--background-color);
     perspective: 5000px;
 }
@@ -231,7 +237,7 @@ button:hover {
 
 .aos-divs-container {
     width: 50%;
-    margin: 60px auto;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -271,7 +277,7 @@ button:hover {
 
 section {
     width: 100%;
-    height: 200px;
+    height: 500px;
 }
 
 /* Declaration of keyframes */
@@ -395,14 +401,14 @@ section {
         width: 60px;
         height: 60px;
     }
-    
+
 }
 
 @media (max-width: 290px) {
     h1 {
         font-size: var(--font-size2);
     }
-    
+
     button {
         padding: 5px;
     }
