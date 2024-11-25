@@ -244,7 +244,7 @@ button:hover {
     display: flex;
     width: 60%;
     height: 400px;
-    margin: 0 auto;
+    margin: 40px auto;
     border: 1px solid var(--background-color);
     perspective: 5000px;
 }
