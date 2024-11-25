@@ -7,7 +7,7 @@
     --background-color5: #04b0a2;
     --background-color6: #000000;
     --background-color7: #ffffff;
-    --background-color8: #e173af;
+    --background-color8: #1c77ff;
 
 
     --font-size: 10px;
@@ -15,14 +15,15 @@
     --font-size2: 20px;
     --font-size3: 30px;
     --font-size4: 40px;
-    --font-size5: 50px;
+    --neon-font-main: 100px;
+    --neon-font1: 60px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 html {
@@ -313,16 +314,68 @@ section {
 
 /* NEON SIGN */
 
-.container {
-    margin: 40px 40px;
+.logo {
+    text-align: center;
+    min-width: 65%;
+    height: 250px;
+    margin: auto;
+    user-select: none;
 }
 
-.neonText {
-    font-size: var(--font-size5);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    animation: flicker 1.5s infinite alternate;
-    color: #fff;
-    padding: 40px;
+.logo b {
+    font-family: "Courgette", cursive;
+    font-size: var(--neon-font-main);
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--background-color8), 0 0 0.5em var(--background-color8), 0 0 0.1em var(--background-color8), 0 10px 3px var(--background-color6);
+}
+
+.logo b span {
+    animation: blink linear infinite 2s;
+}
+
+.logo b span:nth-of-type(2) {
+    animation: blink linear infinite 3s;
+}
+
+@keyframes blink {
+    78% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+
+    79% {
+        color: #333;
+    }
+
+    80% {
+
+        text-shadow: none;
+    }
+
+    81% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+
+    82% {
+        color: #333;
+        text-shadow: none;
+    }
+
+    83% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+
+    92% {
+        color: #333;
+        text-shadow: none;
+    }
+
+    92.5% {
+        color: inherit;
+        text-shadow: inherit;
+    }
 }
 
 
@@ -392,32 +445,44 @@ section {
     }
 }
 
-@keyframes flicker {
-
-    0%,
-    18%,
-    22%,
-    25%,
-    53%,
-    57%,
-    100% {
-
-        text-shadow:
-            0 0 4px var(--background-color7),
-            0 0 11px var(--background-color7),
-            0 0 19px var(--background-color7),
-            0 0 40px var(--background-color8),
-            0 0 80px var(--background-color8),
-            0 0 90px var(--background-color8),
-            0 0 100px var(--background-color8),
-            0 0 150px var(--background-color8);
-
+@keyframes blink {
+    78% {
+        color: inherit;
+        text-shadow: inherit;
     }
 
-    20%,
-    24%,
-    55% {
+    79% {
+        color: #333;
+    }
+
+    80% {
+
         text-shadow: none;
+    }
+
+    81% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+
+    82% {
+        color: #333;
+        text-shadow: none;
+    }
+
+    83% {
+        color: inherit;
+        text-shadow: inherit;
+    }
+
+    92% {
+        color: #333;
+        text-shadow: none;
+    }
+
+    92.5% {
+        color: inherit;
+        text-shadow: inherit;
     }
 }
 
@@ -442,9 +507,6 @@ section {
 }
 
 @media (max-width: 590px) {
-    /* nav {
-        display: none;
-    } */
 
     h2 {
         font-size: var(--font-size3);
@@ -453,6 +515,16 @@ section {
     .frame {
         height: 400px;
     }
+
+    .logo b {
+        font-size: var(--neon-font1)
+    }
+
+    .aos-div {
+        width: 60px;
+        height: 60px;
+    }
+
 }
 
 @media (max-width: 490px) {
@@ -482,11 +554,6 @@ section {
     .board-square {
         width: 70px;
         height: 70px;
-    }
-
-    .aos-div {
-        width: 60px;
-        height: 60px;
     }
 
 }
