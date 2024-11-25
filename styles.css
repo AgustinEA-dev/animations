@@ -6,6 +6,8 @@
     --background-color4: #0f0f0f;
     --background-color5: #04b0a2;
     --background-color6: #000000;
+    --background-color7: #ffffff;
+    --background-color8: #e173af;
 
 
     --font-size: 10px;
@@ -13,6 +15,7 @@
     --font-size2: 20px;
     --font-size3: 30px;
     --font-size4: 40px;
+    --font-size5: 50px;
 }
 
 * {
@@ -146,10 +149,6 @@ h2 {
     z-index: 1;
 }
 
-/* .reset-button {
-    margin-top: 60px;
-} */
-
 /* KEY FRAMES */
 
 .squares-container {
@@ -270,7 +269,7 @@ button:hover {
 
 .aos-divs-container {
     width: 50%;
-    margin: 0 auto;
+    margin: 60px auto;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -281,7 +280,6 @@ button:hover {
     width: 150px;
     height: 150px;
     background-image: linear-gradient(var(--background-color2), var(--background-color));
-    margin: 20px;
 }
 
 .aos-div:nth-child(1) {
@@ -312,6 +310,20 @@ section {
     width: 100%;
     height: 500px;
 }
+
+/* NEON SIGN */
+
+.container {
+    margin: 40px auto;
+}
+
+.neonText {
+    font-size: var(--font-size5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: flicker 1.5s infinite alternate;
+    color: #fff;
+}
+
 
 /* Declaration of keyframes */
 
@@ -379,6 +391,35 @@ section {
     }
 }
 
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+
+        text-shadow:
+            0 0 4px var(--background-color7),
+            0 0 11px var(--background-color7),
+            0 0 19px var(--background-color7),
+            0 0 40px var(--background-color8),
+            0 0 80px var(--background-color8),
+            0 0 90px var(--background-color8),
+            0 0 100px var(--background-color8),
+            0 0 150px var(--background-color8);
+
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
+}
+
 /* Media queries */
 
 @media (max-width: 690px) {
@@ -433,6 +474,10 @@ section {
         font-size: var(--font-size3);
     }
 
+    h2 {
+        font-size: var(--font-size2);
+    }
+
     .board-square {
         width: 70px;
         height: 70px;
@@ -455,7 +500,7 @@ section {
     }
 
     h2 {
-        font-size: var(--font-size2);
+        font-size: var(--font-size1);
     }
 
     .board-square {
