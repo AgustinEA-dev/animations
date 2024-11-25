@@ -551,6 +551,10 @@ button:hover {
         height: 70px;
     }
 
+    .logo b {
+        font-size: var(--neon-font1)
+    }
+
 }
 
 @media (max-width: 290px) {
@@ -564,11 +568,6 @@ button:hover {
 
     h2 {
         font-size: var(--font-size1);
-    }
-
-    
-    .logo b {
-        font-size: var(--neon-font1)
     }
 
     .board-square {
