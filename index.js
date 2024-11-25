@@ -1,10 +1,10 @@
 //Animated Squares/Keyframes
 
-const puaseButton = document.querySelector(".pause")
+const playButton = document.querySelector(".play-button")
 const square = document.querySelectorAll(".square")
 
-puaseButton.addEventListener("click", () => {
-    square.forEach((square) => square.classList.toggle("paused"))
+playButton.addEventListener("click", () => {
+    square.forEach((square) => square.classList.toggle("running"))
 })
 
 //Color Board/EventDelegation
