@@ -314,7 +314,7 @@ section {
 /* NEON SIGN */
 
 .container {
-    margin: 40px auto;
+    margin: 40px 40px;
 }
 
 .neonText {
@@ -322,6 +322,7 @@ section {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     animation: flicker 1.5s infinite alternate;
     color: #fff;
+    padding: 30px;
 }
 
 
