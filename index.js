@@ -43,6 +43,6 @@ resetBoardButton.addEventListener("click", () => {
     const allSquares = document.querySelectorAll(".board-square")
     allSquares.forEach(square => {
         square.classList.remove("board-square-flip")
-        square.style.backgroundColor = "var(--background-color)"
+        square.style.backgroundColor = "var(--background-color4)"
     })
 })

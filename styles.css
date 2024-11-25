@@ -5,6 +5,8 @@
     --background-color3: #7fffd4;
     --background-color4: #0f0f0f;
     --background-color5: #04b0a2;
+    --background-color6: #000000;
+
 
     --font-size: 10px;
     --font-size1: 18px;
@@ -70,32 +72,56 @@ li {
 a {
     color: var(--background-color1);
     text-decoration: none;
-    padding: 5px;
-    transition: 0.5s;
+    text-align: center;
+    position: relative;
+    width: max-content;
 }
+
+a::before {
+    content: "";
+    background-color: var(--background-color);
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    margin: -3px 0;
+    transition: 200ms;
+}
+
+a:hover::before {
+    width: 100%;
+}
+
 
 a:hover {
     color: var(--background-color);
 }
 
 h2 {
+    background-image: linear-gradient(to right, var(--background-color3), var(--background-color1));
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     padding: 70px;
     font-size: var(--font-size3);
     font-family: "Roboto Condensed", serif;
     font-size: var(--font-size3);
     text-align: center;
-    color: var(--background-color1);
 }
 
 /* KEY FRAMES */
 
 .squares-container {
     height: 470px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .square {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin: 20px;
     background-color: var(--background-color);
     animation-name: move, fade, bounce, changeColor;
@@ -178,8 +204,8 @@ button:hover {
 .board-square {
     width: 100px;
     height: 100px;
-    background-color: var(--background-color);
-    border: 1px solid var(--background-color4);
+    background-color: var(--background-color4);
+    border: 1px solid var(--background-color);
     transition: all 0.5s;
     transition-behavior: allow-discrete;
     cursor: pointer;
@@ -224,11 +250,15 @@ button:hover {
     width: 100%;
     height: 100%;
     background-color: var(--background-color5);
+    background-image: url(./assets/cave-canem.webp);
+    background-size: contain;
+    background-position: center;
+    background-blend-mode: darken;
     view-timeline-name: --shape;
     view-timeline-axis: block;
     animation-timeline: --shape;
     animation-name: changePerspective;
-    animation-range: entry 25% cover 50%;
+    animation-range: entry 25% cover 40%;
     animation-fill-mode: both;
 }
 
