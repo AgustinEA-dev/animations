@@ -118,6 +118,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .color-board {
@@ -145,9 +146,9 @@ h2 {
     z-index: 1;
 }
 
-.reset-button {
+/* .reset-button {
     margin-top: 60px;
-}
+} */
 
 /* KEY FRAMES */
 
@@ -195,17 +196,14 @@ h2 {
     animation-play-state: running;
 }
 
-.button-container,
-.reset-button-container {
+.button-container {
     display: flex;
     justify-content: center;
-}
-
-.play-button {
-    margin-top: 40px;
+    padding: 40px;
 }
 
 button {
+    width: 50%;
     padding: 15px;
     border: none;
     background-color: var(--background-color1);
@@ -384,6 +382,10 @@ section {
 /* Media queries */
 
 @media (max-width: 690px) {
+    h2 {
+        padding: 20px;
+    }
+
     nav {
         position: unset;
     }
