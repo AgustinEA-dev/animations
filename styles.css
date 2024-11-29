@@ -38,22 +38,11 @@ body {
     overflow-x: hidden;
 }
 
-h1 {
-    text-align: center;
-    margin: 70px auto 0;
-    width: 70%;
-    font-family: "Funnel Display", sans-serif;
-    font-size: var(--font-size4);
-    background-image: url(./assets/background-h1\ \(20241122072918\).jpg);
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
 nav {
-    position: sticky;
+    position: fixed;
     top: 0;
+    right: 0;
+    left: 0;
     z-index: 2;
     display: flex;
     justify-content: center;
@@ -111,6 +100,43 @@ a:hover {
     color: var(--background-color);
 }
 
+h1 {
+    text-align: center;
+    width: 100%;
+    font-family: "Funnel Display", sans-serif;
+    font-size: var(--font-size4);
+    background-image: url(./assets/background-h1\ \(20241122072918\).jpg);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 56px;
+    background-color: var(--background-color6);
+    width: 100%;
+    height: 30vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero::before {
+    content: "";
+    height: 10px;
+    background-color: var(--background-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: changeWith 1s linear both;
+}
+
 h2 {
     background-image: linear-gradient(to right, var(--background-color3), var(--background-color1));
     background-size: cover;
@@ -123,7 +149,6 @@ h2 {
     font-size: var(--font-size3);
     text-align: center;
 }
-
 
 /* EVENT DELEGATION */
 
@@ -145,8 +170,8 @@ h2 {
 }
 
 .board-square {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     background-color: var(--background-color4);
     border: 1px solid var(--background-color);
     transition: all 0.5s;
@@ -173,8 +198,8 @@ h2 {
 }
 
 .aos-div {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     background-image: linear-gradient(var(--background-color2), var(--background-color));
 }
 
@@ -205,15 +230,15 @@ h2 {
 /* KEY FRAMES */
 
 .squares-container {
-    height: 470px;
+    height: 370px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .square {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     margin: 20px;
     background-color: var(--background-color);
     animation-name: move, fadeOut, changeColor;
@@ -226,20 +251,20 @@ h2 {
 }
 
 .square:nth-child(2) {
-    animation-name: move, fadeOut, bounce, changeColor;
+    animation-name: move, bounce, changeColor;
     animation-duration: 5s, 0.5s, 1s, 0.5s;
     position: relative;
 }
 
 .square:nth-child(3) {
-    animation-name: move, fadeOut, bounce, changeColor;
+    animation-name: move, bounce, changeColor;
     animation-duration: 6s, 0.7s, 0.5s, 2s;
     position: relative;
 
 }
 
 .square:nth-child(4) {
-    animation-name: move, fadeOut, bounce, changeColor;
+    animation-name: move, bounce, changeColor;
     animation-duration: 4s;
     position: relative;
 }
@@ -352,23 +377,18 @@ button:hover {
     animation: blink linear infinite 3s;
 }
 
-/* BEFORE AND AFTER */
+/* DRAGABLE HTML ELEMENT */
 
-.before-after-h2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--background-color1);
-    position: relative;
+.dragable-element-container {
+    width: 100%;
+    height: 50vh;
 }
 
-.before-after-h2::before {
-    content: "";
-    width: 10px;
-    height: 2px;
-    background: linear-gradient(to right, var(--background-color), var(--background-color8));
-    position: absolute;
-    bottom: 0;
+.dragable-element {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(to left, var(--background-color8), var(--background-color));
 }
 
 /* Declaration of keyframes */

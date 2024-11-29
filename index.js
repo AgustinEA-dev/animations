@@ -52,3 +52,28 @@ playButton.addEventListener("click", () => {
         } else playButton.innerText = "START ANIMATION"
     })
 })
+
+// Dragable HTML Element
+
+let dragValue;
+
+function move(id) {
+    let element = document.querySelector(".dragable-element")
+    element.style.position = "absolute"
+    element.onmousedown = function () {
+        dragValue = element
+        console.log("clicked", dragValue)
+    }
+    document.onmousemove = function (event) {
+        let x = event.pageX - element.clientWidth / 2
+        let y = event.pageY - element.clientHeight / 2
+
+        dragValue.style.left = x + "px"
+        dragValue.style.top = y + "px"
+    }
+    document.onmouseup = function (e) {
+        dragValue = null
+    }
+}
+
+document.body.onload = move
