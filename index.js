@@ -55,25 +55,58 @@ playButton.addEventListener("click", () => {
 
 // Dragable HTML Element
 
-let dragValue;
+let newX = 0, newY = 0, startX = 0, startY = 0
 
-function move(id) {
-    let element = document.querySelector(".dragable-element")
-    element.style.position = "absolute"
-    element.onmousedown = function () {
-        dragValue = element
-        console.log("clicked", dragValue)
-    }
-    document.onmousemove = function (event) {
-        let x = event.pageX - element.clientWidth / 2
-        let y = event.pageY - element.clientHeight / 2
+const card = document.querySelector(".card")
 
-        dragValue.style.left = x + "px"
-        dragValue.style.top = y + "px"
-    }
-    document.onmouseup = function (e) {
-        dragValue = null
-    }
+card.addEventListener("mousedown", mouseDown)
+card.addEventListener("ontouchstart", onTouchStart)
+
+function mouseDown(e) {
+    startX = e.clientX
+    startY = e.clientY
+
+    document.addEventListener("mousemove", mouseMove)
+    document.addEventListener("mouseup", mouseUp)
 }
 
-document.body.onload = move
+function mouseMove(e) {
+    newX = startX - e.clientX
+    newY = startY - e.clientY
+
+    startX = e.clientX
+    startY = e.clientY
+
+    card.style.top = (card.offsetTop - newY) + "px"
+    card.style.left = (card.offsetLeft - newX) + "px"
+
+    console.log({ newX, newY })
+    console.log({ startX, startY })
+}
+
+function mouseUp(e) {
+    document.removeEventListener("mousemove", mouseMove)
+}
+
+function onTouchStart(e) {
+    startX = e.clientX
+    startY = e.clientY
+
+    document.addEventListener("ontouchmove", onTouchMove)
+    document.addEventListener("ontouchend", onTouchEnd)
+}
+
+function onTouchMove(e) {
+    newX = startX - e.clientX
+    newY = startY - e.clientY
+
+    startX = e.clientX
+    startY = e.clientY
+
+    card.style.top = (card.offsetTop - newY) + "px"
+    card.style.left = (card.offsetLeft - newX) + "px"
+}
+
+function onTouchEnd(e) {
+    document.removeEventListener("ontouchmove", onTouchMove)
+}
