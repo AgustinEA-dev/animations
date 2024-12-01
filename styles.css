@@ -379,21 +379,30 @@ button:hover {
 
 /* DRAGABLE HTML ELEMENT */
 
+.drag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .card-container {
-    width: 100%;
+    width: 70%;
     height: 50vh;
-    padding: 50px;
+    background-image: url(./assets/vecteezy_abstract-grid-geometric-black-background_51209931.jpg);
+    background-size: cover;
+    background-position: top;
     position: relative;
 }
 
 .card {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background: linear-gradient(to left, var(--background-color8), var(--background-color));
-    border-radius: 5px;
+    /* border-radius: 5px; */
     cursor: pointer;
     position: absolute;
-    top: 0;
+    top: 24px;
+    left: 24px;
 }
 
 /* Declaration of keyframes */
