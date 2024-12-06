@@ -87,26 +87,3 @@ function mouseMove(e) {
 function mouseUp(e) {
     document.removeEventListener("mousemove", mouseMove)
 }
-
-function onTouchStart(e) {
-    startX = e.clientX
-    startY = e.clientY
-
-    document.addEventListener("ontouchmove", onTouchMove)
-    document.addEventListener("ontouchend", onTouchEnd)
-}
-
-function onTouchMove(e) {
-    newX = startX - e.clientX
-    newY = startY - e.clientY
-
-    startX = e.clientX
-    startY = e.clientY
-
-    card.style.top = (card.offsetTop - newY) + "px"
-    card.style.left = (card.offsetLeft - newX) + "px"
-}
-
-function onTouchEnd(e) {
-    document.removeEventListener("ontouchmove", onTouchMove)
-}
