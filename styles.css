@@ -405,6 +405,24 @@ button:hover {
     left: 24px;
 }
 
+
+.esphere-container {
+    width: 100%;
+    height: 400px;
+    background-color: var(--background-color8);
+    cursor: pointer;
+}
+
+
+.esphere {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    background-color: #000000;
+    transition: all 0.5s;
+    border-radius: 50%;
+}
+
 /* Declaration of keyframes */
 
 @keyframes move {
