@@ -39,16 +39,6 @@ resetBoardButton.addEventListener("click", () => {
     })
 })
 
-const esphereContainer = document.querySelector(".esphere-container");
-const esphere = document.querySelector(".esphere");
-
-esphereContainer.addEventListener("click", (e) => {
-    let bounds = esphereContainer.getBoundingClientRect();
-    let x = e.clientX - bounds.left - esphere.clientWidth / 2;
-    let y = e.clientY - bounds.top - esphere.clientHeight / 2;
-    esphere.style.transform = `translateX(${x}px) translateY(${y}px)`;
-});
-
 //Animated Squares/Keyframes
 
 const playButton = document.querySelector(".play-button")
@@ -62,41 +52,3 @@ playButton.addEventListener("click", () => {
         } else playButton.innerText = "START ANIMATION"
     })
 })
-
-// // Dragable HTML Element
-
-let newX = 0, newY = 0, startX = 0, startY = 0
-
-const card = document.querySelector(".card")
-const cardContainer = document.querySelector(".card-container")
-
-cardContainer.addEventListener("mousedown", mouseDown)
-
-function mouseDown(e) {
-    startX = e.clientX
-    startY = e.clientY
-
-    cardContainer.addEventListener("mousemove", mouseMove)
-    document.addEventListener("mouseup", mouseUp)
-}
-
-function mouseMove(e) {
-    let bounds = cardContainer.getBoundingClientRect()
-    console.log(bounds)
-
-    newX = startX - e.clientX 
-    newY = startY - e.clientY
-
-    startX = e.clientX
-    startY = e.clientY
-
-    card.style.top = (card.offsetTop - newY) + "px"
-    card.style.left = (card.offsetLeft - newX) + "px"
-
-    console.log({ newX, newY })
-    console.log({ startX, startY })
-}
-
-function mouseUp(e) {
-    cardContainer.removeEventListener("mousemove", mouseMove)
-}
